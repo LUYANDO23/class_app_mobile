@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class App</title>
+  
+  <!-- Use Cloudflare CDN (more reliable than gstatic) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.8.0/firebase-database-compat.js"></script>
+  
+  <script>
+    // Your Firebase Web configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC1rYzNae0B6asNmgxSLYCUMTrasNmqxOo",
+      authDomain: "class-app-a0548.firebaseapp.com",
+      databaseURL: "https://class-app-a0548-default-rtdb.firebaseio.com",
+      projectId: "class-app-a0548",
+      storageBucket: "class-app-a0548.firebasestorage.app",
+      messagingSenderId: "471676018320",
+      appId: "1:471676018320:web:c64fb644db1eaa0bc6c215",
+      measurementId: "G-DPN575BS69"
+    };
+    
+    // Initialize Firebase when loaded
+    function initFirebase() {
+      if (typeof firebase !== 'undefined' && !firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+        console.log("✅ Firebase initialized successfully");
+      } else if (typeof firebase !== 'undefined') {
+        console.log("✅ Firebase already initialized");
+      } else {
+        console.error("❌ Firebase failed to load - check network");
+      }
+    }
+    
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFirebase);
+    } else {
+      initFirebase();
+    }
+  </script>
+</head>
+<body>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
